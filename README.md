@@ -6,3 +6,10 @@ On Twitter: https://twitter.com/AmanRanjanVerm
 
 If you have any querry regarding the repository please connect with me before making any assumptions. 
 On Linkedin: https://www.linkedin.com/in/aman-ranjan-verma/
+
+These 100 Days of code include:
+SQL for Data Science | Coursera
+Deep Learning on Ramp | Mathworks
+Array | GeeksforGreeks
+MFCC | Digital Speech Processing
+Digital Image Processing
