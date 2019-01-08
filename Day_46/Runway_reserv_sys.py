@@ -24,21 +24,21 @@ class BST():
     def _insert(self,  curr_node, data, c_time):
         if(data > c_time):
             if(data < curr_node.data):
-                if(curr_node.left == None):
-                    if(curr_node.data >= data+3):
-                        curr_node.left = Node(data)
+                if(curr_node.data >= data+3):
+                    if(curr_node.left == None):
+                            curr_node.left = Node(data)
                     else:
+                        self._insert(curr_node.left, data, c_time)
+                else:
                         print("Not empty", curr_node.data, "-", data, "< 3")
-                else:
-                    self._insert(curr_node.left, data, c_time)
             else:
-                if(curr_node.right == None):
-                    if(curr_node.data <= data+3):
-                        curr_node.right = Node(data)
+                if(curr_node.data <= data-3):
+                    if(curr_node.right == None):
+                            curr_node.right = Node(data)
                     else:
-                        print("Not empty", data, "-", curr_node.data, "< 3")
+                        self._insert(curr_node.right, data, c_time)
                 else:
-                    self._insert(curr_node.right, data, c_time)
+                        print("Not empty", data, "-", curr_node.data, "< 3")
         else:
             print("Time has passed for", data, ". Current time = ", c_time)
 
@@ -54,7 +54,7 @@ class BST():
 
 #%%
 t = BST()
-a = [11,9,3,14,50]
+a = [49, 79, 46, 41, 42, 45]
 current_time = 5
 
 for i in a:
