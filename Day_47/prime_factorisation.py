@@ -7,27 +7,21 @@ Created on Wed Jan 16 22:38:45 2019
 
 import math as m
 
-def check_prime(a):
-    for i in range(1, m.ceil(m.sqrt(a))+1):
-        if(a%i == 0):
-            return False
-    return True
+def prime_factors(num):
+    prime = set()
+    i = 2
+    count = 0
+    while(num>1):
+        if(num%i==0):
+            prime.add(i)
+            num = int(num/i)
+        elif(num%i!=0 and i <= m.sqrt(num)):
+            i += 1
+        else:
+            prime.add(num)
+            num = 1
+        count += 1
+    return prime, count
 
-def prime_gen(a):
-    p = [1]
-    for i in range(2, a):
-        if(check_prime(i)):
-            p.append(i)
-    return p
-
-def factors(num, prime):
-    fact = set()
-    for i in prime:
-        if(num%i == 0):
-            fact.add(i)
-    return fact
-
-num = 17 #int(input())
-
-prime = prime_gen(m.ceil(m.sqrt(num)))
-print(factors(num, prime))
+num = 44
+print(prime_factors(num))
