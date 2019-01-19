@@ -11,8 +11,6 @@ def add_1(a):
         while(a[j]==0):
             j += 1
         a = a[j:len(a)]
-    else:
-        a = a
         
     i = len(a)-1
     while(a[i] + 1 > 9):
@@ -25,5 +23,5 @@ def add_1(a):
     return a
 
 
-a = [ 9]
+a = [0, 0, 0, 9]
 print(add_1(a))
